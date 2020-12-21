@@ -1,4 +1,4 @@
-This is a program runs 18 functions in 2 different algorithms¡ª¡ªGA and DE
+This is a program runs 18 functions in 2 different algorithms -- GA (Genetic Algorithm) and DE (Differential 
 Author: Junyu Lu 41176974
 CS471 
 
@@ -55,7 +55,6 @@ ex.
 0.2
 
 
-Strictly follow the pattern or the code will crash.
 
 
 
