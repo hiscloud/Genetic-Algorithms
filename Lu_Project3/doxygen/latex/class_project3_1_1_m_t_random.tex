@@ -1,0 +1,278 @@
+\hypertarget{class_project3_1_1_m_t_random}{}\section{Project3.\+M\+T\+Random Class Reference}
+\label{class_project3_1_1_m_t_random}\index{Project3.MTRandom@{Project3.MTRandom}}
+Inheritance diagram for Project3.\+M\+T\+Random\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_project3_1_1_m_t_random}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_project3_1_1_m_t_random_a53aed3686fa87293ed7b65b706086dab}{M\+T\+Random}} ()
+\item 
+\mbox{\hyperlink{class_project3_1_1_m_t_random_acf5fc01aeb0d6edfaf1c514159e7d1db}{M\+T\+Random}} (boolean compatible)
+\item 
+\mbox{\hyperlink{class_project3_1_1_m_t_random_a302f2ba4ac375c97e7d1b71017f272ba}{M\+T\+Random}} (long seed)
+\item 
+\mbox{\hyperlink{class_project3_1_1_m_t_random_aa76f9e441fff43fc2d1d84c3b33a2535}{M\+T\+Random}} (byte\mbox{[}$\,$\mbox{]} buf)
+\item 
+\mbox{\hyperlink{class_project3_1_1_m_t_random_ad01dc6b80432b956ebe61d3b9b320355}{M\+T\+Random}} (int\mbox{[}$\,$\mbox{]} buf)
+\item 
+final synchronized void \mbox{\hyperlink{class_project3_1_1_m_t_random_a96cf558539a32642af9ae2fd51b0ad9f}{set\+Seed}} (long seed)
+\item 
+final void \mbox{\hyperlink{class_project3_1_1_m_t_random_a3f346d0c56b39096e1a29f2bf12c2dec}{set\+Seed}} (byte\mbox{[}$\,$\mbox{]} buf)
+\item 
+final synchronized void \mbox{\hyperlink{class_project3_1_1_m_t_random_a4ac05e6ef57dbaa67596e3de3d9e5d49}{set\+Seed}} (int\mbox{[}$\,$\mbox{]} buf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_project3_1_1_m_t_random_a072c4515dc4fffe1f96c6bf5d78f5bfc}{pack}} (byte\mbox{[}$\,$\mbox{]} buf)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+final synchronized int \mbox{\hyperlink{class_project3_1_1_m_t_random_aa2bb6d5222e59c49548d8f29a9e14be6}{next}} (int bits)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+David Beaumont, Copyright 2005 
+\end{DoxyAuthor}
+A Java implementation of the M\+T19937 (Mersenne Twister) pseudo random number generator algorithm based upon the original C code by Makoto Matsumoto and Takuji Nishimura (see \href{http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html}{\texttt{ http\+://www.\+math.\+sci.\+hiroshima-\/u.\+ac.\+jp/$\sim$m-\/mat/\+M\+T/emt.\+html}} for more information. 
+
+As a subclass of java.\+util.\+Random this class provides a single canonical method \mbox{\hyperlink{class_project3_1_1_m_t_random_aa2bb6d5222e59c49548d8f29a9e14be6}{next()}} for generating bits in the pseudo random number sequence. Anyone using this class should invoke the public inherited methods (next\+Int(), next\+Float etc.) to obtain values as normal. This class should provide a drop-\/in replacement for the standard implementation of java.\+util.\+Random with the additional advantage of having a far longer period and the ability to use a far larger seed value. 
+
+This is {\bfseries{not}} a cryptographically strong source of randomness and should {\bfseries{not}} be used for cryptographic systems or in any other situation where true random numbers are required. 
+
+\href{http://creativecommons.org/licenses/LGPL/2.1/}{\texttt{ }}~\newline
+ This software is licensed under the \href{http://creativecommons.org/licenses/LGPL/2.1/}{\texttt{ C\+C-\/\+G\+NU L\+G\+PL}}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a53aed3686fa87293ed7b65b706086dab}\label{class_project3_1_1_m_t_random_a53aed3686fa87293ed7b65b706086dab}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!MTRandom@{MTRandom}}
+\index{MTRandom@{MTRandom}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{MTRandom()}{MTRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Project3.\+M\+T\+Random.\+M\+T\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The default constructor for an instance of \mbox{\hyperlink{class_project3_1_1_m_t_random}{M\+T\+Random}}. Since the no-\/argument constructor of java.\+util.\+Random does not seem to call set\+Seed anymore (since J\+D\+K7), we need to do it manually in this constructor. For legacy purposes, the seed remains initialized by a call to System.\+current\+Time\+Millis(). \begin{DoxyAuthor}{Author}
+Jonathan Passerat-\/\+Palmbach 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_acf5fc01aeb0d6edfaf1c514159e7d1db}\label{class_project3_1_1_m_t_random_acf5fc01aeb0d6edfaf1c514159e7d1db}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!MTRandom@{MTRandom}}
+\index{MTRandom@{MTRandom}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{MTRandom()}{MTRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Project3.\+M\+T\+Random.\+M\+T\+Random (\begin{DoxyParamCaption}\item[{boolean}]{compatible }\end{DoxyParamCaption})}
+
+This version of the constructor can be used to implement identical behaviour to the original C code version of this algorithm including exactly replicating the case where the seed value had not been set prior to calling genrand\+\_\+int32. 
+
+If the compatibility flag is set to true, then the algorithm will be seeded with the same default value as was used in the original C code. Furthermore the set\+Seed() method, which must take a 64 bit long value, will be limited to using only the lower 32 bits of the seed to facilitate seamless migration of existing C code into Java where identical behaviour is required. 
+
+Whilst useful for ensuring backwards compatibility, it is advised that this feature not be used unless specifically required, due to the reduction in strength of the seed value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em compatible} & Compatibility flag for replicating original behaviour. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a302f2ba4ac375c97e7d1b71017f272ba}\label{class_project3_1_1_m_t_random_a302f2ba4ac375c97e7d1b71017f272ba}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!MTRandom@{MTRandom}}
+\index{MTRandom@{MTRandom}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{MTRandom()}{MTRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Project3.\+M\+T\+Random.\+M\+T\+Random (\begin{DoxyParamCaption}\item[{long}]{seed }\end{DoxyParamCaption})}
+
+This version of the constructor simply initialises the class with the given 64 bit seed value. For a better random number sequence this seed value should contain as much entropy as possible. \begin{DoxyVerb}This constructor was modified due to be compliant to the JDK7's implementation
+of java.util.Random as explained in MTRandom()
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em seed} & The seed value with which to initialise this class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_project3_1_1_m_t_random_a53aed3686fa87293ed7b65b706086dab}{M\+T\+Random()}} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Jonathan Passerat-\/\+Palmbach 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_aa76f9e441fff43fc2d1d84c3b33a2535}\label{class_project3_1_1_m_t_random_aa76f9e441fff43fc2d1d84c3b33a2535}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!MTRandom@{MTRandom}}
+\index{MTRandom@{MTRandom}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{MTRandom()}{MTRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Project3.\+M\+T\+Random.\+M\+T\+Random (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buf }\end{DoxyParamCaption})}
+
+This version of the constructor initialises the class with the given byte array. All the data will be used to initialise this instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The non-\/empty byte array of seed information. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & if the buffer is null. \\
+\hline
+{\em Illegal\+Argument\+Exception} & if the buffer has zero length. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_ad01dc6b80432b956ebe61d3b9b320355}\label{class_project3_1_1_m_t_random_ad01dc6b80432b956ebe61d3b9b320355}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!MTRandom@{MTRandom}}
+\index{MTRandom@{MTRandom}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{MTRandom()}{MTRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Project3.\+M\+T\+Random.\+M\+T\+Random (\begin{DoxyParamCaption}\item[{int \mbox{[}$\,$\mbox{]}}]{buf }\end{DoxyParamCaption})}
+
+This version of the constructor initialises the class with the given integer array. All the data will be used to initialise this instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The non-\/empty integer array of seed information. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & if the buffer is null. \\
+\hline
+{\em Illegal\+Argument\+Exception} & if the buffer has zero length. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_aa2bb6d5222e59c49548d8f29a9e14be6}\label{class_project3_1_1_m_t_random_aa2bb6d5222e59c49548d8f29a9e14be6}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!next@{next}}
+\index{next@{next}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily final synchronized int Project3.\+M\+T\+Random.\+next (\begin{DoxyParamCaption}\item[{int}]{bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+This method forms the basis for generating a pseudo random number sequence from this class. If given a value of 32, this method behaves identically to the genrand\+\_\+int32 function in the original C code and ensures that using the standard next\+Int() function (inherited from Random) we are able to replicate behaviour exactly. 
+
+Note that where the number of bits requested is not equal to 32 then bits will simply be masked out from the top of the returned integer value. That is to say that\+:
+
+
+\begin{DoxyPre}
+mt.setSeed(12345);
+int foo = mt.nextInt(16) + (mt.nextInt(16) << 16);
+\end{DoxyPre}
+
+
+will not give the same result as
+
+
+\begin{DoxyPre}
+mt.setSeed(12345);
+int foo = mt.nextInt(32);
+\end{DoxyPre}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & The number of significant bits desired in the output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next value in the pseudo random sequence with the specified number of bits in the lower part of the integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a072c4515dc4fffe1f96c6bf5d78f5bfc}\label{class_project3_1_1_m_t_random_a072c4515dc4fffe1f96c6bf5d78f5bfc}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!pack@{pack}}
+\index{pack@{pack}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily static int \mbox{[}$\,$\mbox{]} Project3.\+M\+T\+Random.\+pack (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This simply utility method can be used in cases where a byte array of seed data is to be used to repeatedly re-\/seed the random number sequence. By packing the byte array into an integer array first, using this method, and then invoking set\+Seed() with that; it removes the need to re-\/pack the byte array each time set\+Seed() is called. 
+
+If the length of the byte array is not a multiple of 4 then it is implicitly padded with zeros as necessary. For example\+:
+
+
+\begin{DoxyPre}
+byte[] \{ 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 \}
+\end{DoxyPre}
+
+
+becomes
+
+
+\begin{DoxyPre}
+int[]  \{ 0x04030201, 0x00000605 \}
+\end{DoxyPre}
+ 
+
+Note that this method will not complain if the given byte array is empty and will produce an empty integer array, but the set\+Seed() method will throw an exception if the empty integer array is passed to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The non-\/null byte array to be packed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/null integer array of the packed bytes. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & if the given byte array is null. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a96cf558539a32642af9ae2fd51b0ad9f}\label{class_project3_1_1_m_t_random_a96cf558539a32642af9ae2fd51b0ad9f}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{setSeed()}{setSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily final synchronized void Project3.\+M\+T\+Random.\+set\+Seed (\begin{DoxyParamCaption}\item[{long}]{seed }\end{DoxyParamCaption})}
+
+This method resets the state of this instance using the 64 bits of seed data provided. Note that if the same seed data is passed to two different instances of \mbox{\hyperlink{class_project3_1_1_m_t_random}{M\+T\+Random}} (both of which share the same compatibility state) then the sequence of numbers generated by both instances will be identical. 
+
+If this instance was initialised in \textquotesingle{}compatibility\textquotesingle{} mode then this method will only use the lower 32 bits of any seed value passed in and will match the behaviour of the original C code exactly with respect to state initialisation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & The 64 bit value used to initialise the random number generator state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a3f346d0c56b39096e1a29f2bf12c2dec}\label{class_project3_1_1_m_t_random_a3f346d0c56b39096e1a29f2bf12c2dec}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{setSeed()}{setSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily final void Project3.\+M\+T\+Random.\+set\+Seed (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buf }\end{DoxyParamCaption})}
+
+This method resets the state of this instance using the byte array of seed data provided. Note that calling this method is equivalent to calling \char`\"{}set\+Seed(pack(buf))\char`\"{} and in particular will result in a new integer array being generated during the call. If you wish to retain this seed data to allow the pseudo random sequence to be restarted then it would be more efficient to use the \char`\"{}pack()\char`\"{} method to convert it into an integer array first and then use that to re-\/seed the instance. The behaviour of the class will be the same in both cases but it will be more efficient.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The non-\/empty byte array of seed information. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & if the buffer is null. \\
+\hline
+{\em Illegal\+Argument\+Exception} & if the buffer has zero length. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_project3_1_1_m_t_random_a4ac05e6ef57dbaa67596e3de3d9e5d49}\label{class_project3_1_1_m_t_random_a4ac05e6ef57dbaa67596e3de3d9e5d49}} 
+\index{Project3.MTRandom@{Project3.MTRandom}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!Project3.MTRandom@{Project3.MTRandom}}
+\subsubsection{\texorpdfstring{setSeed()}{setSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily final synchronized void Project3.\+M\+T\+Random.\+set\+Seed (\begin{DoxyParamCaption}\item[{int \mbox{[}$\,$\mbox{]}}]{buf }\end{DoxyParamCaption})}
+
+This method resets the state of this instance using the integer array of seed data provided. This is the canonical way of resetting the pseudo random number sequence.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The non-\/empty integer array of seed information. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & if the buffer is null. \\
+\hline
+{\em Illegal\+Argument\+Exception} & if the buffer has zero length. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/study/\+C\+S471/\+Lu\+\_\+\+Project3/src/\+Project3/M\+T\+Random.\+java\end{DoxyCompactItemize}
